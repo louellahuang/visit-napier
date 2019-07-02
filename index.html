@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<!-- To ensure proper rendering and touch zooming, add the following <meta> tag inside the <head> element: -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- CSS -->
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<!-- Custom -->
+	<link rel="stylesheet" href="assets/css/styles.css">
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="assets/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+	<link rel="manifest" href="assets/favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<title> Visit Art Deco Napier - The Art Deco Capital of the World</title>
+</head>
+
+<body>
+
+<div class="landing-page mb-4">
+	<div class="header-container">
+		<div id="triangle-topleft"></div>
+			<div class="title-container">
+				<h4 class="mt-1">VISIT ART DECO</h4>
+				<h1 class="mb-3">napier</h1>
+			</div>
+		<div id="triangle-topright"></div>
+	</div>
+		
+	<div class="header-container-btm">
+		<div id="triangle-bottomleft"></div>
+		<p class="title-date mb-5">Start planning your 2019 Art Deco Weekend now! <br>13th - 17th February 2019</p>
+		<div id="triangle-bottomright"></div>
+	</div>
+
+	<form class="accomodation-form">
+		<!-- calendar input -->
+		<div class="input-group has-feedback input-field mt-2 shadow-sm">
+			<label for="date-picker" class="sr-only">Calendar</label>
+			<input class="form-control" type='text' id='date-picker'/>
+			<i class="far fa-calendar-alt cal-icon form-control-feedback"></i>
+		</div>
+		<!-- guest input -->
+		<div class="input-group has-feedback input-field mt-2 shadow-sm">
+			<label for="qty-input" class="sr-only">Number of Guests</label>
+			<i class="fas fa-user user-icon"></i>
+			<input type="number" value="1" min="1" max="4" step="1" id="qty-input" class="form-control text-center" aria-label="quantity-input">
+
+			<div class="input-group-prepend">
+				<button class="btn btn-info shadow-sm" type="button" id="button-minus"><i class="fas fa-minus"></i></button>
+			</div>
+
+			<div class="input-group-append">
+				<button class="btn btn-info shadow-sm" type="button" id="button-plus"><i class="fas fa-plus"></i></button>
+			</div>
+		</div>
+		<!-- search input -->
+		<div class="input-group has-feedback mt-2 shadow-sm">
+			<label for="search" class="sr-only">Search for Results</label>
+			<input id="search" class="btn btn-search" type="submit" value="Search">
+		</div>
+	</form>
+</div>
+
+<div id="accom" class="hide">
+	<div class="header-container">
+		<div class="triangle-topleft-sm"></div>
+			<div class="title-container">
+				<h4>WHERE TO STAY</h4>
+			</div>
+		<div class="triangle-topright-sm"></div>
+	</div>
+
+	<section id="results">
+		<!-- no results card -->
+		<article id='no-results' class="shadow-sm mb-2 card hide">
+			<h6 class="text-center" >No Results Found!😢😢😢😢</h6>
+		</article>
+	</section>
+</div>
+
+<div id="meal" class="hide">
+	<div class="header-container">
+		<div class="triangle-topleft-sm"></div>
+			<div class="title-container">
+				<h4>MEAL ADD-ONS</h4>
+			</div>
+		<div class="triangle-topright-sm"></div>
+	</div>
+
+	<section class="">
+
+		<div id="meal-0" class="meal card shadow-sm mb-3">
+			<a class="card-link meal-link" href="#" data-toggle="modal" data-target="#mealModal" ></a>
+			<img class="card-img-top" src="assets/img/meal/pacifica.jpg" alt="Pacifica Kaimoana">
+			<div class="card-body">
+				<h5 class="card-title">Pacifica Kaimoana</h5>
+				<h6 class="mb-2 text-muted">$65 Per Person</h6>
+			</div>
+		</div>
+
+		<div id="meal-1" class="meal card shadow-sm mb-3">
+			<a class="card-link meal-link" href="#" data-toggle="modal" data-target="#mealModal" ></a>
+			<img class="card-img-top" src="assets/img/meal/bistronomy.jpg" alt="Bistronomy">
+			<div class="card-body">
+				<h5 class="card-title">Bistronomy</h5>
+				<h6 class="mb-2 text-muted">$75 Per Person</h6>
+			</div>
+		</div>
+
+		<div id="meal-2" class="meal card shadow-sm mb-3">
+			<a class="card-link meal-link" href="#" data-toggle="modal" data-target="#mealModal" ></a>
+			<img class="card-img-top" src="assets/img/meal/emporium.jpg" alt="Emporium Eatery & Bar">
+			<div class="card-body">
+				<h5 class="card-title">Emporium Eatery & Bar</h5>
+				<h6 class="mb-2 text-muted">$36 Per Person</h6>
+			</div>
+		</div>
+
+	</section>
+</div>
+
+<div id="confirmation" class="hide">
+	
+	<div class="header-container">
+		<div class="triangle-topleft-sm"></div>
+			<div class="title-container">
+				<h4>PLEASE CONFIRM YOUR STAY</h4>
+			</div>
+		<div class="triangle-topright-sm"></div>
+	</div>
+
+	<div class="card">
+		<div class="p-2">
+			<!-- accomodation chosen -->
+			<p class="stay-dates text-center">test</p>
+			<article class="card shadow-sm mb-2 chosen-accom-card">
+				<div class="row">
+					 <div class="col-5 mx-0">
+					 	<img class="rounded-0 card-img-top" src="assets/img/masonic-hotel1.jpg" alt="">
+					 </div>
+					<div class="col-7 mx-0">
+						<h5 class="chosen-hotel card-title">Hotel Chosen</h5>
+						<p class="total-accom-price card-text mb-2 text-muted">Total Price:</p>
+					</div>
+			    </div>
+			</article>
+			<!-- meal options chosen -->
+			<article class="card shadow-sm mb-2  chosen-meal-card hide">
+				<div class="row">
+					 <div class="col-5 mx-0">
+					 	<img class="rounded-0 card-img-top" src="assets/img/meal/emporium.jpg" alt="">
+					 </div>
+					<div class="col-7 mx-0">
+						<h5 class="chosen-meal card-title">Meals Chosen</h5>
+						<p class="chosen-meal-name card-text mb-2 text-muted">Total Price:</p>
+						<p class="total-meal-price card-text mb-2 text-muted">test</p>
+					</div>
+			    </div>
+			</article>
+			<!-- final price -->
+			<div class="total-price card-body text-center">
+			    TOTAL PRICE:
+			</div>
+		</div>
+	</div>
+
+	<div id="payment">
+		<div class="header-container">
+			<div class="triangle-topleft-sm"></div>
+				<div class="title-container">
+					<h4>PAYMENT INFORMATION</h4>
+				</div>
+			<div class="triangle-topright-sm"></div>
+		</div>
+		<article class="card">
+			<div class="card-body p-5">
+				<form>
+					<div class="form-group">
+						<label for="username">Full name (on the card)</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fa fa-user"></i></span>
+							</div>
+							<input id="username" type="text" class="form-control" name="username" placeholder="" required="">
+						</div> <!-- input-group.// -->
+
+					</div> <!-- form-group.// -->
+
+					<div class="form-group">
+
+						<label for="cardNumber">Card number</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+							</div>
+							<input id="cardNumber" type="text" class="form-control" name="cardNumber" placeholder="">
+						</div> <!-- input-group.// -->
+
+					</div> <!-- form-group.// -->
+
+					<div class="row">
+					    <div class="col-sm-8">
+					        <div class="form-group">
+					            <label><span class="hidden-xs">Expiration</span> </label>
+					        	<div class="form-inline">
+					        		<select class="form-control" style="width:45%">
+									  <option>MM</option>
+									  <option>01 - January</option>
+									  <option>02 - February</option>
+									  <option>03 - March</option>
+									  <option>04 - April</option>
+									  <option>05 - May</option>
+									  <option>06 - June</option>
+									  <option>07 - July</option>
+									  <option>08 - August</option>
+									  <option>09 - September</option>
+									  <option>10 - October</option>
+									  <option>11 - November</option>
+									  <option>12 - December</option>
+									</select>
+						            <span style="width:10%" class="text-center"> / </span>
+						            <select class="form-control" style="width:45%">
+									  <option>YY</option>
+									  <option>2018</option>
+									  <option>2019</option>
+									</select>
+					        	</div>
+					        </div>
+					    </div>
+					    <div class="col-sm-4">
+					        <div class="form-group">
+					            <label data-toggle="tooltip" title="" data-original-title="3 digits code on back side of the card">CVV <i class="fa fa-question-circle"></i></label>
+					            <input class="form-control" required="" type="text">
+					        </div> <!-- form-group.// -->
+					    </div>
+					</div> <!-- row.// -->
+
+					<button class="btn btn-primary btn-block" type="button">Confirm</button>
+				</form>
+			</div> <!-- card-body.// -->
+		</article> <!-- card.// -->
+	</div>
+</div>
+
+<!-- Injected / Hidden HTML -->
+<!-- accom cards -->
+<section id="template" class="hide">
+	<article class="accomodation shadow-sm mb-2 card">
+		<a class="card-link accom-link" href="#" data-toggle="modal" data-target="#accom-modal" ></a>
+		<div class="row">
+			 <div class="col-5 mx-0">
+			 	<img class="rounded-0 card-img-top" src="..." alt="">
+			 </div>
+			<div class="col-7 mx-0">
+				<h5 class="card-title">test</h5>
+				<h6 class="card-subtitle mb-2 text-muted">test</h6>
+			</div>
+	    </div>
+	</article>
+</section>
+
+<!-- accom modal -->
+<div class="accomodation-modal modal fade" id="accom-modal" tabindex="-1" role="dialog" aria-labelledby="accomodationModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    	<img class="accom-img rounded-0 card-img-top" src="assets/img/masonic-hotel1.jpg" alt="">
+		<div class="modal-body">
+			<h5 class="accom-title modal-title" id="accomodationModal">Modal title</h5>
+			<div class="accom-desc card-text text-muted">test</div>
+			<span class="accom-price card-subtitle mb-2 text-muted"></span>
+			<span class="card-text text-muted">/per night</span>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+			<button type="button" id="skipMeal" data-dismiss="modal" class="btn btn-primary">Book Accomodation</button>
+			<button type="button" id="bookAccom" data-dismiss="modal" class="btn btn-primary">Add Meals</button>
+		</div>
+    </div>
+  </div>
+</div>
+
+<!-- meal modal -->
+<div class="modal fade" id="mealModal" tabindex="-1" role="dialog" aria-labelledby="restaurantName" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    	<img class="meal-img rounded-0 card-img-top" src="assets/img/masonic-hotel1.jpg" alt="">
+      <div class="modal-header">
+        <h5 class="modal-title" id="restaurantName">Modal title</h5>
+      </div>
+      <div class="modal-body">
+		<p id="meal-desc" class="text-muted"></p>
+		<span class="meal-price card-subtitle mb-2 text-muted"></span>
+		<span class="card-text text-muted">/per person</span>
+
+
+		<!-- meal input -->
+		<div class="meal-input input-group input-field mt-2 shadow-sm">
+			<label for="meal-qty-input" class="sr-only">Number of Meals</label>
+			<i class="fas fa-user user-icon"></i>
+			<input type="number" value="1" min="1" max="4" step="1" id="meal-qty-input" class="form-control text-center" aria-label="quantity-input">
+
+			<div class="input-group-prepend">
+				<button class="btn btn-info shadow-sm" type="button" id="meal-button-minus"><i class="fas fa-minus"></i></button>
+			</div>
+
+			<div class="input-group-append">
+				<button class="btn btn-info shadow-sm" type="button" id="meal-button-plus"><i class="fas fa-plus"></i></button>
+			</div>
+		</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelMeal">Skip</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="addMeal">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<!-- Plugins -->
+<script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<!-- Scripts -->
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

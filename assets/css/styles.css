@@ -1,0 +1,205 @@
+/*fonts*/
+@font-face {
+    font-family: 'coventry_garden_nfregular';
+    src: url('../fonts/coventrygardennf-webfont.woff2') format('woff2'),
+         url('../fonts/coventrygardennf-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1{
+	font-family: 'coventry_garden_nfregular';
+	font-size: 4em;
+	text-align: center;
+}
+
+h4{
+	font-size: 1em;
+	text-align: center;
+}
+
+.title-date{
+	font-size: .7em;
+	text-align: center;
+}
+
+.card-title{
+  font-size: 1em;
+}
+
+.card-subtitle{
+  font-size: 1.2em;
+  text-align: right;
+}
+
+/*main*/
+
+body{
+	background: #F8EED1;
+	color: rgba(53, 129, 184, 1);
+  /*border: 10px solid red;*/
+}
+
+.header-container{
+	display: flex;
+	justify-content: space-between;
+}
+
+#triangle-topleft {
+  width: 0;
+  height: 0;
+  border-top: 2.4em solid rgba(239, 149, 157, 1);
+  border-right: 2.4em solid transparent;
+}
+
+#triangle-topright {
+  width: 0;
+  height: 0;
+  border-top: 2.4em solid rgba(239, 149, 157, 1);
+  border-left: 2.4em solid transparent;
+}
+
+.header-container-btm {
+  display: flex;
+  justify-content: space-between;
+}
+
+#triangle-bottomleft {
+  width: 0;
+  height: 0;
+  border-bottom: 2.4em solid rgba(239, 149, 157, 1);
+  border-right: 2.4em solid transparent;
+}
+
+#triangle-bottomright {
+  width: 0;
+  height: 0;
+  border-bottom: 2.4em solid rgba(239, 149, 157, 1);
+  border-left: 2.4em solid transparent;
+}
+
+.triangle-topleft-sm {
+  width: 0;
+  height: 0;
+  border-top: 2em solid rgba(239, 149, 157, 1);
+  border-right: 2em solid transparent;
+}
+
+.triangle-topright-sm {
+  width: 0;
+  height: 0;
+  border-top: 2em solid rgba(239, 149, 157, 1);
+  border-left: 2em solid transparent;
+}
+
+
+.accomodation,
+.meal,
+.payment{ /*makes clickable div*/
+  position: relative;
+}
+
+a.card-link {  /* This is the link of the entire card */
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+/*form*/
+
+.input-field {
+  position: relative;
+}
+
+#date-picker{
+  cursor: pointer;
+}
+
+.cal-icon {
+  position: absolute;
+  right: 0px;
+  padding: 10px 12px;
+}
+
+.user-icon {
+  position: absolute;
+  left: 0px;
+  padding: 10px 12px;
+  z-index: 1;
+}
+
+/*display*/
+
+#template {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+/*buttons*/
+
+.btn-primary{
+  color: #fff;
+  background: rgba(53, 129, 184, 1);
+  border-color: rgba(53, 129, 184, 1);
+}
+
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:visited {
+  background: rgba(53, 129, 184, 1);
+  border-color: rgba(53, 129, 184, 1);
+}
+
+.btn-outline-primary{
+  color: rgba(53, 129, 184, 1);
+  background: #fff;
+  border-color: rgba(53, 129, 184, 1);
+}
+
+.btn-outline-primary:active,
+.btn-outline-primary:focus,
+.btn-outline-primary:visited {
+  color: rgba(53, 129, 184, 1);
+  background: #fff;
+  border-color: rgba(53, 129, 184, 1);
+}
+
+.btn-search{
+  color: #fff;
+  background: rgba(53, 129, 184, 1);
+  border-color: rgba(53, 129, 184, 1);
+  width: 100%;
+}
+
+.btn-search:active,
+.btn-search:focus,
+.btn-search:visited {
+  background: rgba(53, 129, 184, 1);
+  border-color: rgba(53, 129, 184, 1);
+}
+
+.btn-info{
+  color: #fff;
+  background: rgba(53, 129, 184, 1);
+  border-color: rgba(53, 129, 184, 1);
+}
+
+.btn-info:active,
+.btn-info:focus,
+.btn-info:visited {
+  background: rgba(53, 129, 184, 1);
+  border-color: rgba(53, 129, 184, 1);
+}
+
+#goToPayment{
+}
+
+
+
+
+
